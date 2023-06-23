@@ -1,3 +1,5 @@
+!pip install boto3
+
 import streamlit as st
 import boto3
 
