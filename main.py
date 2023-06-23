@@ -3,8 +3,25 @@ import boto3
 import time
 import requests
 
-s3 = boto3.client('s3', region_name='us-east-2')
-transcribe = boto3.client('transcribe', region_name='us-east-2')
+# Add your AWS credentials here
+aws_access_key_id = 'AKIASVQSSTREEAUQ4PE5'
+aws_secret_access_key = '3SK1Gew9pK64Tyit5OHWIQ/8h1LJISwy+g4NktNv'
+# aws_session_token = 'YOUR_SESSION_TOKEN'  # If you have a session token, otherwise comment or remove this line
+
+s3 = boto3.client('s3', 
+                  region_name='us-east-2', 
+                  aws_access_key_id=aws_access_key_id, 
+                  aws_secret_access_key=aws_secret_access_key) 
+                #   aws_session_token=aws_session_token)  # If you have a session token, otherwise comment or remove this line
+
+transcribe = boto3.client('transcribe', 
+                          region_name='us-east-2', 
+                          aws_access_key_id=aws_access_key_id, 
+                          aws_secret_access_key=aws_secret_access_key) 
+                        #   aws_session_token=aws_session_token)  # If you have a session token, otherwise comment or remove this line
+
+# rest of your code...
+
 
 def main():
     st.title('AWS Transcribe Audio Transcription')
