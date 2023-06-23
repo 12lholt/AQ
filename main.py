@@ -9,7 +9,7 @@ transcribe = boto3.client('transcribe', region_name='us-east-2')
 def main():
     st.title('AWS Transcribe Audio Transcription')
     
-    uploaded_file = st.file_uploader("Upload an audio file", type=['wav', 'mp3', 'flac'])
+    uploaded_file = st.file_uploader("Upload an audio file", type=['wav', 'mp3', 'mp4', 'flac'])
 
     if st.button('Send File to Amazon Transcribe'):
         if uploaded_file is not None:
